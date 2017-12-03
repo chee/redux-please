@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans');
+@import url('https://fonts.googleapis.com/css?family=Satisfy');
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  background: #333;
+  overflow: hidden;
+  user-select: none;
+}
+
+main {
+  height: 100vh;
+  font-family: fira sans;
+  color: white;
+  font-weight: 700;
+  font-size: 8vw;
+  white-space: nowrap;
+}
+
+h1,
+h2 {
+  margin: 0;
+}
+
+.slide-wrapper {
+  height: 100%;
+  width: 100vw;
+  display: inline-block;
+  vertical-align: top;
+  overflow: hidden;
+}
