@@ -1,8 +1,17 @@
-import {createStore} from 'redux'
+import {
+  createStore,
+  applyMiddleware,
+  compose
+} from 'redux'
 
 import reducer from './reducer'
 
-const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__())
+import notesMiddleware from './notes-middleware'
+
+const store = createStore(reducer, compose(
+  applyMiddleware(notesMiddleware),
+  window.__REDUX_DEVTOOLS_EXTENSION__()
+))
 
 export default store
 

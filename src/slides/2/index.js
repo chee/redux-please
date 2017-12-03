@@ -45,6 +45,14 @@ export const reducer = createReducer(initialState, {
   }
 })
 
+export const notes =
+`these Egghead videos. two hours of video by Dan Abramov, the creator of Redux.
+which is followed by another 120 minutes of "Advanced Redux", or "using redux in
+practice" or something, that concentrates on using Redux with React.
+
+so, i did that, and I thought "okay, in six hours, i'll know redux." and i
+psyched myself up, made a cup of tea, sat down at my computer and *click*`
+
 class Slide2 extends PureComponent {
   clocks = [...Array(12)].map((_, i) => String.fromCodePoint(i + 128336))
 

@@ -44,8 +44,40 @@ store.subscribe(render)
 window.onclick = () => store.dispatch(incrementSlide())
 window.onkeypress = () => store.dispatch(decrementSlide())
 
-render()
-`
+render()`
+
+export const notes =
+`so here's a full example application using redux.
+
+at the top, we define our action types as constants.
+
+then we have a couple action creators for those action types.
+
+then we have our reducer, which keeps track of the current slide. its default
+state, you can see, is 0. increment adds one, decrement removes one unless that
+would be below 0.
+
+then we create our store with that reducer. our slide content is not very
+exciting.
+
+we've got a render function here, that gets the current state, which is the
+current slide number, and sets the text content of the slide element to that
+slide
+
+then we subscribe to state changes, so that render gets called any time our
+state changes
+
+and we're binding a couple events, so that when you click the slide increments
+and when you press a key, the slide decrements
+
+then we call render once to get started
+
+*open terminal, show html file, show store.js, python3 -m http.server,
+*demonstrate*
+
+okay, so that's redux.
+
+*click*`
 
 export default class Slide3 extends PureComponent {
   componentDidMount () {

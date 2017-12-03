@@ -1,35 +1,25 @@
 import React, {PureComponent} from 'react'
 import styled from 'styled-components'
 
-import Slide from '../slide'
+import Slide from './slide'
 
-import lostLevels from '../../images/lost-levels.gif'
+import ladybird from '../images/ladybird-book-of-redux.png'
 
 const Image = styled.img`
   width: 80vh;
   margin: auto;
 `
 
-export const notes =
-`played video games for three days
-
-but then, i saw this: *click*
-
-====
-
-played video games for another three days.
-
-*click*
-`
+export const notes = ' '
 
 export default class Slide3 extends PureComponent {
   render () {
     return (
       <Slide
         {...this.props}
-        background='#393633'>
+        background='#cceeff'>
         <Image
-          src={lostLevels}
+          src={ladybird}
         />
       </Slide>
     )

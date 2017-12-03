@@ -28,8 +28,6 @@ const slideReducers = slides.reduce((slideReducers, slide, index) => {
   return slideReducers
 }, {})
 
-console.log(slideReducers)
-
 export default combineReducers({
   currentSlide,
   ...slideReducers

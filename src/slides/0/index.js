@@ -27,6 +27,14 @@ const Subtitle = styled.p`
   font-family: satisfy;
 `
 
+export const notes =
+`okay, so we're going to talk about Redux.
+a global immutable state store, as you can see in italics.
+
+this is going to be short, but dense. like, code dense.
+
+*click*`
+
 export default class Slide0 extends PureComponent {
   render () {
     return (

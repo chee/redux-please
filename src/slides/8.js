@@ -11,6 +11,15 @@ const List = styled.ul`
 
 const actionCreator = `removeSausage(22)`
 
+export const notes =
+`an action creator.
+
+a pure function that returns an action
+
+so that function there, removeSausage, will create the action from the last page
+
+okay`
+
 export default class Slide3 extends PureComponent {
   render () {
     return (

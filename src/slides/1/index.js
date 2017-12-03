@@ -37,6 +37,27 @@ export const reducer = createReducer(initialState, {
   })
 })
 
+export const notes =
+`What is it?
+
+*click*
+
+it's a global immutable state store
+
+*click*
+
+*click*
+
+it's small, *click*, it's simple, *click*, it's framework agnostic. because it's
+just some functions.
+it's a contract, and a system of indirection.
+
+Now, if you wanted to learn Redux at any point, you might type "learn redux"
+into google. whereupon you'll find learnredux.com, two and a half hours of Wes
+Bos talking about Redux.
+
+or, you might find *click*`
+
 class Slide1 extends PureComponent {
   bullets = [
     'a global immutable state store',

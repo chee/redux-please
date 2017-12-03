@@ -61,6 +61,39 @@ export const reducer = createReducer(initialState, {
   }
 })
 
+export const notes =
+`or something like this. it's Redux implemented in a tweet. Now this was back
+when -- and you may be too young to remember this -- when tweets were only 140
+characters.
+
+so that was something. i thought "wow, redux is simple enough to fit in a
+tweet." and i *left arrow*
+
+====
+
+but let's break this out and look at it in a little more detail
+
+*click*
+
+with words
+
+*click*
+
+Okay. so redux exports a function called \`createStore\`, and that function
+takes a reducer.
+
+it returns an object, that we call the store, which has three functions.
+
+getState, which returns us the current state
+dispatch, which lets us send an action through the store
+and subscribe, which lets us register functions to be told when an action gets
+dispatched.
+
+so there's only a couple of concepts we need to look at here,
+
+*click*
+`
+
 class Slide4 extends PureComponent {
   forward = () => {
     const {
@@ -81,8 +114,6 @@ class Slide4 extends PureComponent {
     const {
       tweet
     } = this.props
-
-    console.log(this.props.step, this.props.tweet)
 
     return (
       <Slide

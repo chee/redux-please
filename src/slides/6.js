@@ -2,6 +2,13 @@ import React, {PureComponent} from 'react'
 
 import Slide from './slide'
 
+export const notes =
+`
+and reducers
+
+*click*
+`
+
 export default class Slide3 extends PureComponent {
   render () {
     return (
