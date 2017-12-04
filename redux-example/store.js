@@ -1,19 +1,27 @@
-let createStore = reducer => {
-  let state = reducer(undefined, {type: '@init'})
-  let subscriptions = new Set
+function createStore (reducer, enhancer) {
+  let subscriptions = new Set()
+  let state
 
-  return {
+  if (enhancer) {
+    return enhancer(createStore)(reducer)
+  }
+
+  const store = {
     subscribe (fn) {
       subscriptions.add(fn)
+      return () => subscriptions.delete(fn)
     },
     dispatch (action) {
       state = reducer(state, action)
       subscriptions.forEach(fn => fn())
+      return action
     },
-    getState () {
-      return state
-    }
+    getState: () => state
   }
+
+  store.dispatch({type: '@@redux/INIT'})
+
+  return store
 }
 
 const INCREMENT_SLIDE = 'increment slide'
@@ -43,9 +51,9 @@ function reducer (state = 0, action) {
   }
 }
 
-const store = createStore(reducer)
+const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__())
 
-const slides = ['slide 1', 'slide 2', 'slide 3']
+const slides = ['first slide', 'another slide', 'slide three']
 
 function render () {
   const current = store.getState()

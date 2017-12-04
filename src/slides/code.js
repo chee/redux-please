@@ -1,8 +1,9 @@
+import React from 'react'
 import styled from 'styled-components'
 
 const background = '#333'
 
-export default styled.code`
+const Code = styled.code`
   font-weight: 100;
   border-radius: 5px;
   font-size: 14px;
@@ -12,3 +13,10 @@ export default styled.code`
   max-width: 80vw;
   white-space: pre-wrap;
 `
+
+export default props =>
+  <div
+    style={{background}}
+    ref={props.setRef}>
+    <Code {...props} />
+  </div>

@@ -9,7 +9,8 @@ const Slide = styled.div`
   white-space: normal;
   justify-content: center;
   align-items: center;
-  background: ${props => props.background}
+  background: ${props => props.background};
+  transition: background 2s ease-in-out;
 `
 
 export default class extends React.PureComponent {

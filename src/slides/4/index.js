@@ -14,7 +14,8 @@ const initialState = {
 
 const actions = {
   expandTweet: createAction('expand slide 4 tweet'),
-  wordifyTweet: createAction('add words to slide 4 redux implementation')
+  wordifyTweet: createAction('add words to slide 4 redux implementation'),
+  completeTweet: createAction('add enhancer to slide 4 redux implementation')
 }
 
 export const reducer = createReducer(initialState, {
@@ -56,6 +57,36 @@ export const reducer = createReducer(initialState, {
       return {...state}
     }
   }
+}`
+    }
+  },
+  [actions.completeTweet.type] (state) {
+    return {
+      step: 3,
+      tweet: `function createStore (reducer, enhancer) {
+  let subscriptions = new Set()
+  let state
+
+  if (enhancer) {
+    return enhancer(createStore)(reducer)
+  }
+
+  const store = {
+    subscribe (fn) {
+      subscriptions.add(fn)
+      return () => subscriptions.delete(fn)
+    },
+    dispatch (action) {
+      state = reducer(state, action)
+      subscriptions.forEach(fn => fn())
+      return action
+    },
+    getState: () => state
+  }
+
+  store.dispatch({type: '@@redux/INIT'})
+
+  return store
 }`
     }
   }
@@ -100,13 +131,15 @@ class Slide4 extends PureComponent {
       step,
       expandTweet,
       wordifyTweet,
+      completeTweet,
       incrementSlide
     } = this.props
 
     switch (step) {
       case 0: return expandTweet()
       case 1: return wordifyTweet()
-      case 2: return incrementSlide()
+      case 2: return completeTweet()
+      case 3: return incrementSlide()
     }
   }
 

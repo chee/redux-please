@@ -12,7 +12,7 @@ import {
 
 import slides from '../slides'
 
-const currentSlide = createReducer(0, {
+const currentSlide = createReducer(slides.length, {
   [setSlide.type]: (state, payload) => payload,
   [incrementSlide.type]: state => state + 1,
   [decrementSlide.type]: state => Math.max(0, state - 1)
@@ -28,7 +28,7 @@ const slideReducers = slides.reduce((slideReducers, slide, index) => {
   return slideReducers
 }, {})
 
-export default combineReducers({
+export default () => combineReducers({
   currentSlide,
   ...slideReducers
 })

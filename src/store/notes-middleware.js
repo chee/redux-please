@@ -15,9 +15,9 @@ const relevantActions = [
 ]
 
 export default store => {
-  const socket = new window.WebSocket('ws://localhost:7775')
+  const socket = null && new window.WebSocket('ws://localhost:7775')
 
-  socket.addEventListener('message', message => {
+  socket && socket.addEventListener('message', message => {
     if (message.data === 'back') {
       store.dispatch(decrementSlide())
     }
@@ -35,7 +35,7 @@ export default store => {
     const note = notes[currentSlide]
 
     if (note && relevantActions.includes(action.type)) {
-      socket.send(note)
+      socket && socket.send(note)
     }
   }
 }
