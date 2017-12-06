@@ -15,7 +15,7 @@ const relevantActions = [
 ]
 
 export default store => {
-  const socket = null && new window.WebSocket('ws://localhost:7775')
+  const socket = new window.WebSocket('ws://localhost:7775')
 
   socket && socket.addEventListener('message', message => {
     if (message.data === 'back') {
