@@ -12,6 +12,10 @@ import App from './app'
 
 import './index.css'
 
+import register from './registerServiceWorker'
+
+register()
+
 function renderApp () {
   render(
     <Provider store={store}>
